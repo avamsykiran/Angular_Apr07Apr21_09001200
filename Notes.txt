@@ -1,1 +1,264 @@
-"https://github.com/avamsykiran/Angular_Apr07Apr21_09001200.git" 
+https://github.com/avamsykiran/Angular_Apr07Apr21_09001200.git
+
+
+Pre Requsites
+-------------------------------
+    Html 5
+            Elements And Attributes
+            Web Storage
+            Form Elements and Validations
+
+    Css
+            Css Style Properties
+            Selectors
+
+    Bootstrap (optional)
+            Grid System
+            Typography
+            Alerts, Crads, Navbar ..etc
+
+    JavaScript (ES6)
+            Sugar Syntax
+                Moduels
+                Classes
+                Prototypes
+                Closures
+                Arrow Functions
+                Tempalte Literals
+            
+            Promise
+            Data,String,Math and Object API
+            Array Prototype API
+
+    Angular 11
+    ----------------------------------------------------------------------------------------------------
+
+        Lab Setup
+            VS Code                         IDE
+            NodeJS                          Development Platform        https://nodejs.org/en/
+                                                    node --version
+            NPM (node package manager)      Build Tool
+                                                    npm --version
+
+            Angular CLI (CmdLineInterface)  Angular Development Tool
+                                                    ng --version
+
+                                                    npm install -g @angular/cli
+
+            Chrome                          Browser
+
+        -=--=-=-=-=-=-=-==-=-=-=-=-=-==-=--===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+        Dynamic Web Appliction
+
+        Database <-->  [ DAL  <--> Service <--> Controller <--> View (JSP/ASP/PHP) ]  <--Html+CSS+JS---> Client
+
+        SPA     Single Page Application
+
+                         [ SPA                                          ]  <--Html+CSS+JS---> Client
+
+        Database <-->  [ DAL  <--> Service <--> Controller (WebService) ]  <--Data (xml/json)---> Client
+
+        -=--=-=-=-=-=-=-==-=-=-=-=-=-==-=--===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+        Typescript
+                    = Javascript (ES6) + TypeSafety.
+
+
+                    Javascript
+                            const sayHello = (unm) => {
+                                console.log(unm.length);
+                                return "Hello " + unm;
+                            };
+
+                            sayHello("Vamsy");
+                            sayHello(123);
+                            sayHello(true);
+                            sayHello({id:1,title:"Apples",price:2345});
+
+                    Typescript
+                            const sayHello = (unm:string) => {            
+                                console.log(unm.length);
+                                return "Hello " + unm;
+                            };
+                            
+                            sayHello("Vamsy");
+
+                    DataTypes
+                                any
+                                string
+                                number
+                                boolean
+                                array           []
+                                void
+                                undefined
+                                null
+
+                             Interface
+                                = data members +
+                                     absctract functions
+
+     
+        -=--=-=-=-=-=-=-==-=-=-=-=-=-==-=--===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+        Angular Archetecture
+
+                        Modules
+                        Component
+                        Directives
+                        Pipes
+                        Services
+                        Gaurds
+                        Interceptors
+
+        Angular CLI Commands
+
+                        ng new proj-name
+                               .browserslistrc         list of brosers to be supproted
+                               .gitignore
+                                angular.json           angular cli config         
+                                package.json           npm config
+                                tsconfig.app.json
+                                tsconfig.json          ts config
+                                tslint.json            lint config
+                                karma.conf.js          karma config
+                                e2e                    end-to-end test cases using protractor.
+                                node_modules           all dewnlaoded libraries
+                                src                    source code
+
+                        ng build
+                                to compile and bundle your projects
+
+                                vendor.js               contains all code of thrid party lib..
+                                                                all angular librries
+                                                                + rxjs + any other thrid party
+                                                                JS lib
+
+                                polyfills.js            support for advanced es fetures
+                                                                for older browsers
+                              
+                                main.js                 contains the code written in this 
+                                                        spa.
+
+                                runtime.js              support for modules in older browsers
+
+                        ng serve
+                                do a continuos build and host in a dev server.
+                                4200 default port for dev server.
+
+                                ng serve --port 8989 -o
+
+                        ng generate
+                        ng g
+
+                                ng g component componentName    --skip-tests
+                                ng g module moduleName
+                                ng g directive directiveName
+                                ng g pipe pipeName
+                                ng g service serviceName
+                                ng g class className
+                                ng g guard guardName
+                                ng g interface interfaceName
+
+                        ng add library-name
+
+      -=--=-=-=-=-=-=-==-=-=-=-=-=-==-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+        Angular Archetecture In details
+
+                each of the below angular resoruce is a class.
+                the class is amrked with a decorator and the decorators accepts
+                a few parameters called meta-data. Through these decorators
+                we can recognize what resource is represented a givben class.
+
+                        Module
+                                        a logical group of component,
+                                        directives,pipes,gaurds,services 
+                                        and other angular modules.
+
+                                        @NgModule({
+                                                declarations:[
+                                                 //list of component,directives,pipes that belong to this module.
+                                                ],
+                                                imports:[
+                                                        //list of sub-moudles to be included in this module
+                                                ],
+                                                exports:[
+                                                 //list of component,directives,pipes that are allowed to be used by
+                                                 //other moduelss
+                                                ],
+                                                providers:[
+                                                        //list of services and interceptors.
+                                                ],
+                                                bootstrap:[
+                                                        //list of components whose object must be created
+                                                        //immediatly after loading the module.
+                                                ]
+                                        })
+                                        class M1{
+
+                                        }
+
+                                        1. an angular project can have any number of modules
+                                        2. one angular proj can have only one top-level module
+                                        and that top-level is called root modules and all
+                                        other sub-modules are called Feature modules.
+                        Component
+
+                                        angular allows html extendability.
+                                        angualr allows to define new elements in html.
+                                        thats what is a component.
+
+                                        component is a new html tag.
+                                        component = Controller + Template + Style
+                                                        Controller will hold state and behaviour of the component
+                                                                                data and actions
+                                                        Template will hold the presentation of the component
+                                                        Style will hold local css of the component
+
+                                        c1.component.ts
+                                        -----------------------
+                                        @Component({
+                                                selector:'app-welcome',
+                                                tempalteUrl:'c1.component.html',
+                                                styleUrls:['c1.component.css']
+                                        })
+                                        class C1{
+                                           title : string;
+                                           constructor(){
+                                                   this.title = "Hello Welcome all"; //state
+                                           }
+                                        }
+
+                                        c1.component.html
+                                        -----------------------------
+                                        <h1>{{title}}</h1>
+
+                                        c1.component.css
+                                        ------------------------------
+                                        h1{
+                                                text-align:center;
+                                        }
+
+                                        <app-welcome></app-welcome>
+                        Directive
+                                       @Directive({
+                                                
+                                        })
+                                        class D1{
+
+                                        }
+                        Pipe
+                                       @Pipe({
+                                                
+                                        })
+                                        class P1{
+
+                                        }
+                        Service
+                                       @Injectable({
+                                                
+                                        })
+                                        class S1{
+
+                                        }
