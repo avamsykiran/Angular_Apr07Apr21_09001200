@@ -1,0 +1,52 @@
+<section>
+    <h3>String pipes</h3>
+
+    <div>Original:<strong>{{strData}}</strong></div>
+    <div><strong>{{strData|lowercase}}</strong></div>
+    <div><strong>{{strData|uppercase}}</strong></div>
+    <div><strong>{{strData|titlecase}}</strong></div>
+</section>
+
+<section>
+    <h3>Numeric pipes</h3>
+
+    <div>Original:<strong>{{numData}}</strong></div>
+    <div><strong>{{numData|number:'3.4-6'}}</strong></div>
+    <div><strong>{{numData|percent:'3.4-6'}}</strong></div>
+</section>
+
+<section>
+    <h3>Currency pipes</h3>
+
+    <div>Original:<strong>{{numData}}</strong></div>
+    <div><strong>{{numData|currency:'INR'}}</strong></div>
+    <div><strong>{{numData|currency:'USD'}}</strong></div>
+    <div><strong>{{numData|currency:'AUD'}}</strong></div>
+    <div><strong>{{numData|currency:'GBP'}}</strong></div>
+    <div><strong>{{numData|currency:'XYZ'}}</strong></div>
+</section>
+
+<section>
+    <h3>Date pipes</h3>
+
+    <div>Original:<strong>{{dateData}}</strong></div>
+    <div><strong>{{dateData|date:'short'}}</strong></div>
+    <div><strong>{{dateData|date:'long'}}</strong></div>
+    <div><strong>{{dateData|date:'dd-MM-yyyy hh:mm:ss a'}}</strong></div>
+    <div><strong>{{dateData|date:'dd-MMM-yyyy'}}</strong></div>
+    <div><strong>{{dateData|date:'dd-MMMM-yyyy HH:mm:ss'}}</strong></div>
+  
+</section>
+<section>
+    <h3>Object pipes</h3>
+
+    <div>Original:<strong>{{objData}}</strong></div>
+    <div><strong>{{objData|json}}</strong></div>
+</section>
+<section>
+    <h3>custom pipes</h3>
+
+    <div>1024:<strong>{{1024|inwords}}</strong></div>
+    <div>1024.001:<strong>{{1024.001|inwords}}</strong></div>
+    <div>01024:<strong>{{01024|inwords}}</strong></div>
+</section>

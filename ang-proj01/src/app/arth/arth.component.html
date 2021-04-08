@@ -1,0 +1,27 @@
+<table>
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Gender</th>
+            <th>Mobile</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="contacts.length==0">
+            <td colspan="4">
+                <strong>No Records To Display</strong>
+            </td>
+        </tr>
+        <tr *ngFor="let c of contacts">
+            <td>{{c.fullName}}</td>
+            <td>{{c.gender}}</td>
+            <td>{{c.mobile}}</td>
+            <td>
+                <button (click)="delete(c)">
+                    DELETE
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,17 @@
+
+p, div,form{
+    margin:10px;
+}
+
+.centered{
+    display: block;
+    margin: auto;
+}
+
+.bordered{
+    border:2px solid black;
+}
+
+.roundCornered{
+    border-radius: 10px;
+}

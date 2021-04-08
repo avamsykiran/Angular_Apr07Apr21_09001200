@@ -241,14 +241,90 @@ Pre Requsites
                                         }
 
                                         <app-welcome></app-welcome>
-                        Directive
-                                       @Directive({
-                                                
-                                        })
-                                        class D1{
 
-                                        }
+
+                                        Data Binding
+                                        -----------------------------------------
+
+                                        Interpolation
+                                                        {{angular-expression.}}
+                                        
+                                        One-Way Data Binding
+                                                        [attrib]="angular-expression"
+
+                                        Event Binding
+                                                        (eventAttribute)="function()"
+
+                                                        onclick         click
+                                                        ondblclick      dblclick
+                                                        onblur          blur
+                                        
+                                        Two Way Data Binding
+                                                        
+                                                        [(ngModel)]="variables"
+
+                                                        FormsModule
+
+                                        Style Binding
+
+                                                        [class]="variable"
+                                                        [class]="{className:true,class2:false}"
+
+                        Directive
+
+                                        Directive / Attribute Directives
+                                                        are user-defiend html attributes .
+
+                                        InBuilt Attribute Directives
+
+                                                Event Directives
+                                                        click
+                                                        dblclick
+                                                        blur
+                                                        focus
+                                                        change
+                                                        submit
+                                                        ngSubmit
+                                                
+                                                Structural Directives
+                                                        *ngIf
+                                                        *ngFor
+                                                        *ngSwitch
+
+                                                Other InBuilt Directives
+                                                        ngModel
+                                                        formControlName
+                                                        routerLink
+                                                                        .........etc.,
+
+                                        Custome Directives
+                                                @Directive({
+                                                        
+                                                })
+                                                class D1{
+
+                                                }
+
                         Pipe
+
+                                pipes are used to tranform a given
+                                value to another before rendering.
+
+                                {{value|pipeName:param1:param2}}
+
+                                InBuilt Pipes
+                                        uppercase
+                                        lowercase
+                                        titlecase
+
+                                        number
+                                        currency
+                                        date
+                                        json
+                                        
+                                        async
+
+                                Custome Pipes
                                        @Pipe({
                                                 
                                         })

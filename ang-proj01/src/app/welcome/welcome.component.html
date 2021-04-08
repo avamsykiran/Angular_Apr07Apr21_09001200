@@ -1,3 +1,23 @@
 <p>
     {{welcomeText}}
 </p>
+<form>
+    <input type="text" name="tb1" [(ngModel)]="welcomeText" />
+    <label>
+        <input type="checkbox" name="c1" [(ngModel)]="imageStyle.centered"/>
+        Centered
+    </label>
+    <label>
+        <input type="checkbox" name="c2" [(ngModel)]="imageStyle.bordered"/>
+        Bordered Centered
+    </label>
+    <label>
+        <input type="checkbox" name="c3" [(ngModel)]="imageStyle.roundCornered"/>
+        Round Cornered
+    </label>
+</form>
+<div>
+    <img [src]="imgs[imgIndex]" 
+         (click)="toggleImageIndex()" 
+         [class]="{centered:imageStyle.centered,bordered:imageStyle.bordered,roundCornered:imageStyle.roundCornered}" />
+</div>
