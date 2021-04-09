@@ -338,3 +338,35 @@ Pre Requsites
                                         class S1{
 
                                         }
+
+        Angular Forms
+        ------------------------------------------------
+
+                Template Driven Forms                           
+                        FormsModule
+                                NgForm
+                                NgModel
+
+                        Most of the form is written in the template,
+                        a very little or almost no control over the form, we have programatically.
+
+                        Recommended for small input senarios like,
+                                login Forms
+                                search forms ..etc.,
+
+                        Not much testable.
+
+                Model Driven Forms / Reactive Forms             
+                        ReactiveFormsModule
+                                FormGroup
+                                FormControl
+
+                        
+                        Most of the form is written in the controller,
+                        a lot of control over the form, we have programatically.
+
+                        Recommended fro complicated senarios like
+                                Registration Forms
+                                Add/Update Resource Forms
+
+                        Are highly testable.
