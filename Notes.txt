@@ -360,7 +360,6 @@ Pre Requsites
                         ReactiveFormsModule
                                 FormGroup
                                 FormControl
-
                         
                         Most of the form is written in the controller,
                         a lot of control over the form, we have programatically.
@@ -370,3 +369,27 @@ Pre Requsites
                                 Add/Update Resource Forms
 
                         Are highly testable.
+
+        Routing
+        ---------------------------------------------------------------------------
+
+                RouterModule
+
+                                <router-outlet></router-outlet>
+
+                                Route   -->     path
+                                                component
+                                                pathMatch               full/startWith
+                                                children
+                                                redirectTo
+                                
+                                Routes  ---> an array of Route
+
+                                <a routerLink="path">link</a>
+
+                                Router  is a inbuilt service to facilitate 
+                                                programatically navigate.
+
+                                        navigateByUrl('/emps/list');
+                                        navigate(['/emps','/list']);
+

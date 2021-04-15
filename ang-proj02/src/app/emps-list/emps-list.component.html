@@ -1,0 +1,24 @@
+<section>
+    <h3>
+        <i class="fa fa-list"> Employees List</i>
+    </h3>
+
+    <table class="table table-stripped table-bordered">
+        <thead>
+            <th>Employee#</th>
+            <th>Name</th>
+            <th>Hire Date</th>
+            <th>Basic Pay</th>
+            <th>Department</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of emps">
+                <td>{{e.id}}</td>
+                <td>{{e.name|uppercase}}</td>
+                <td>{{e.hiredate|date:'dd-MMM-yyyy'}}</td>
+                <td>{{e.basic|currency:'INR'}}</td>
+                <td>{{e.deptId}} - {{e.deptId|deptname}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
