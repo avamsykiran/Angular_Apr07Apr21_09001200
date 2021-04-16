@@ -393,3 +393,114 @@ Pre Requsites
                                         navigateByUrl('/emps/list');
                                         navigate(['/emps','/list']);
 
+                                ActivatedRoute  --> is a inbuilt service that gives data
+                                                        about Routes.
+
+                                        .snapshot
+                                                .params         is an object of path params
+                                                .queryParams    is an object of qry params
+                                                .url            gives the current url.
+
+
+        RxJS
+        ----------------------------------------------------------------------------------------------
+
+                is a javascript that supports reactive programming.
+
+
+                An Application will have two types of operations,
+                        1. Long time consuming operations
+                                        heavly loops,
+                                        sending req to a server and receving data from the server .,.etc
+
+                        2. Short operations
+                                        all other sorts of operations.
+                
+                Time Consuming operations must be done asynchronously, because we can 
+                not let the ui struct dowbn until the time consuming job is compelte.,
+
+                Synchronous way of doing 
+                ------------------------------------------------
+                UI      a save button is clicked
+                                1. send data tot he server
+                                2. wait until server responds
+                                3. if server responds positivly, display success message
+                                        or server gives error, display error message
+
+                 Asynchronous way of doing 
+                ------------------------------------------------
+                UI      a save button is clicked
+                                1. send data to the server
+                                        |
+                                ----------------------
+                                |                    | asynchronously wait for the server
+                                display                                 |
+                                a progress bar/                         | when server responds
+                                a wating message /                              |
+                                a small iamge                                   | notify the ui
+                                                                                |
+                                        -----------------------------------------
+                                        |
+                                       if server responds positivly, display success message
+                                        or server gives error, display error message 
+
+
+                ES6                     Promise
+
+                RxJS                    Observable                      enhanced Promise
+
+
+                                        let job = function(observer){
+                                                
+                                                ................
+                                                ...................
+                                                observer.next(val); //to emit resultant values of the job.
+                                                observer.erro(err); //to signal the job encoutered an err
+                                                observer.complete(); //ti indicate the job is compelte.
+                                                ........................
+
+                                        }
+
+                                        let ob = new Observable(job);
+
+                                        ob.subscribe(
+                                                (value) => {}, //called in resposne to obeserver.next
+                                                (err) => {}, //called in response to observer.error
+                                                () => {} //called in response to observer.complete
+                                        );
+
+                                        ob.unsubscribe();
+
+
+
+
+        Modularization
+        --------------------------------------------------------------------------------------
+        Domain: A domain NgModule is organized around a feature, business domain, or user experience.
+        Routed: The top component of the NgModule acts as the destination of a router navigation route.
+        Routing: A routing NgModule provides the routing configuration for another NgModule.
+        Service: A service NgModule provides utility services such as data access and messaging.
+        Widget: A widget NgModule makes a component, directive, or pipe available to other NgModules.
+        Shared: A shared NgModule makes a set of components, directives, and pipes available to other NgModules.
+
+                NgModule	Declarations	Providers	Exports	        Imported by
+                ------------------------------------------------------------------------------
+                Domain	        Yes	        Rare	        Top component	Another domain, AppModule
+                Routed	        Yes	        Rare	        No	        None
+                Routing	        No	        Yes (Guards)	RouterModule	Another domain (for routing)
+                Service	        No	        Yes	        No	        AppModule
+                Widget	        Yes	        Rare	        Yes	        Another domain
+                Shared	        Yes	        No	        Yes	        Another domain
+
+        Angular LifeCycle & Hooks
+       --------------------------------------------------------------------------------------
+
+        constructor
+        ngOnChanges                      when the data-bound property variations happen (form control gets renewed )
+        ngOnInit                         When Angular has completed the creation and introduction of components
+        ngDoCheck                        whenever there is a vitality to review the input property of a component or directive
+                ngAfterContentInit      when every content of the components gets introduced and checked for the first time
+                ngAfterContentChecked   
+                ngAfterViewInit
+                ngAfterViewChecked
+        ngOnDestroy

@@ -1,10 +1,10 @@
 <section class="col-sm-4 mx-auto">
-    <h3> New Employee </h3>
+    <h3> {{isEditing?"Edit ":"New "}} Employee </h3>
 
     <form [formGroup]="empForm" (ngSubmit)="handleSubmit()">
         <div class="form-group">
             <label>Employee Id</label>
-            <input type="number" class="form-control" formControlName="id" />
+            <input type="number" class="form-control" formControlName="id" [readonly]="isEditing"/>
             <div class="alert alert-danger" *ngIf="id.invalid && (id.dirty || id.touched)">
                 <span *ngIf="id.errors.required">This is a mandate field</span>
                 <span *ngIf="id.errors.min">No zeros or negatrive values allowed for this field</span>

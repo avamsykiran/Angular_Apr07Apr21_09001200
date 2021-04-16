@@ -7,10 +7,19 @@ import { EmpService } from '../service/emp.service';
   templateUrl: './emps-list.component.html',
   styleUrls: ['./emps-list.component.css']
 })
-export class EmpsListComponent  {
-  emps:Emp[];
+export class EmpsListComponent {
+  emps: Emp[];
 
-  constructor(private empService:EmpService) {
-    this.emps=this.empService.getAll();
+  constructor(private empService: EmpService) {
+    this.loadData();
+  }
+
+  loadData() {
+    this.emps = this.empService.getAll();
+  }
+
+  delete(id: number) {
+    this.empService.deleteById(id);
+    this.loadData();
   }
 }

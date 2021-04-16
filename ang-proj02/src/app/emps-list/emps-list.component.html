@@ -3,13 +3,18 @@
         <i class="fa fa-list"> Employees List</i>
     </h3>
 
-    <table class="table table-stripped table-bordered">
+    <div class="alert alert-info" *ngIf="!emps || (emps.length==0)">
+        <strong>No Records To Display.</strong>
+    </div>
+
+    <table class="table table-stripped table-bordered"  *ngIf="emps && (emps.length>0)">
         <thead>
             <th>Employee#</th>
             <th>Name</th>
             <th>Hire Date</th>
             <th>Basic Pay</th>
             <th>Department</th>
+            <th></th>
         </thead>
         <tbody>
             <tr *ngFor="let e of emps">
@@ -18,6 +23,14 @@
                 <td>{{e.hiredate|date:'dd-MMM-yyyy'}}</td>
                 <td>{{e.basic|currency:'INR'}}</td>
                 <td>{{e.deptId}} - {{e.deptId|deptname}}</td>
+                <td>
+                    <a [routerLink]="['/emps/edit/',e.id]" class="btn btn-sm  mr-3">
+                        <i class="fa fa-pencil"> EDIT</i>
+                    </a>
+                    <button class="btn btn-sm " (click)="delete(e.id)">
+                        <i class="fa fa-trash"> DELTE</i>
+                    </button>
+                </td>
             </tr>
         </tbody>
     </table>

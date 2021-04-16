@@ -18,6 +18,7 @@ const pathMappings : Routes = [
   {path:'emps',component:EmpsComponent,children:[
     {path:'list',component:EmpsListComponent},
     {path:'new',component:EmpFormComponent},
+    {path:'edit/:id',component:EmpFormComponent},
     {path:'',pathMatch:'full',redirectTo:'list'}
   ]},
   {path:'',pathMatch:'full',redirectTo:'depts'}
