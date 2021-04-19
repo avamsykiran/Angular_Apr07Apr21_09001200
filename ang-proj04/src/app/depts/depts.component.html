@@ -1,0 +1,17 @@
+<section class="row">
+    <div class="col-sm-3 border-1 shadow-sm m-3">
+        <app-dept-form (add)="doAdd($event)"></app-dept-form>
+    </div>
+    <div class="col-sm-7 border-1 shadow-sm m-3">
+
+        <div class="alet alert-info" *ngIf="!depts && !err">
+            <strong>Please wait while loading data...!</strong>
+        </div>
+
+        <div class="alet alert-danger" *ngIf="err">
+            <strong>{{err}}</strong>
+        </div>
+
+        <app-dept-list [depts]="depts" *ngIf="depts"></app-dept-list>
+    </div>
+</section>

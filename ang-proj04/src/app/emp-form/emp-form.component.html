@@ -1,0 +1,55 @@
+<section class="col-sm-4 mx-auto">
+    <h3> {{isEditing?"Edit ":"New "}} Employee </h3>
+
+    <div class="alet alert-danger" *ngIf="err">
+        <strong>{{err}}</strong>
+    </div>
+
+    <form [formGroup]="empForm" (ngSubmit)="handleSubmit()" *ngIf="!err">
+        <div class="form-group">
+            <label>Employee Id</label>
+            <input type="number" class="form-control" formControlName="id" [readonly]="isEditing"/>
+            <div class="alert alert-danger" *ngIf="id.invalid && (id.dirty || id.touched)">
+                <span *ngIf="id.errors.required">This is a mandate field</span>
+                <span *ngIf="id.errors.min">No zeros or negatrive values allowed for this field</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Employee Name</label>
+            <input type="text" class="form-control" formControlName="name" />
+            <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                <span *ngIf="name.errors.required">This is a mandate field</span>
+                <span *ngIf="name.errors.minlength">Atleast 5 chars expected</span>
+                <span *ngIf="name.errors.maxlength">Atmax w5 chars expected</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Join Date</label>
+            <input type="date" class="form-control" formControlName="hiredate" />
+            <div class="alert alert-danger" *ngIf="hiredate.invalid && (hiredate.dirty || hiredate.touched)">
+                <span *ngIf="hiredate.errors.required">This is a mandate field</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Basic Pay</label>
+            <input type="number" class="form-control" formControlName="basic" />
+            <div class="alert alert-danger" *ngIf="basic.invalid && (basic.dirty || basic.touched)">
+                <span *ngIf="basic.errors.required">This is a mandate field</span>
+                <span *ngIf="basic.errors.min">No zeros or negatrive values allowed for this field</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Department</label>
+            <select class="form-control" formControlName="deptId">
+                <option value=''>--SELECT---</option>
+                <option *ngFor="let d of depts" [value]="d.id">{{d.title}}</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="deptId.invalid && (deptId.dirty || deptId.touched)">
+                <span *ngIf="deptId.errors.required">This is a mandate field</span>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-block" [disabled]="empForm.invalid">
+            <i class="fa fa-save">Save Employee</i>
+        </button>
+    </form>
+</section>

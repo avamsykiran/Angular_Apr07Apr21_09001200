@@ -1,6 +1,5 @@
 https://github.com/avamsykiran/Angular_Apr07Apr21_09001200.git
 
-
 Pre Requsites
 -------------------------------
     Html 5
@@ -471,8 +470,33 @@ Pre Requsites
 
                                         ob.unsubscribe();
 
+        Angular LifeCycle & Hooks
+       --------------------------------------------------------------------------------------
+
+        constructor
+        ngOnChanges                      when the data-bound property variations happen (form control gets renewed )
+        ngOnInit                         When Angular has completed the creation and introduction of components
+        ngDoCheck                        whenever there is a vitality to review the input property of a component or directive
+                ngAfterContentInit      when every content of the components gets introduced and checked for the first time
+                ngAfterContentChecked   
+                ngAfterViewInit
+                ngAfterViewChecked
+        ngOnDestroy
 
 
+
+        HttpClientModule
+        --------------------------------------------------------------------------
+
+                all requried services and helpers
+                to communicate witha  REST api.
+
+
+                        HttpClient
+                                        get(apiUrl)             : Observable
+                                        post(apiUrl,reqBody)    : Observable
+                                        put(apiUrl,reqBody)     : Observable
+                                        delete(apiUrl)          : Observable
 
         Modularization
         --------------------------------------------------------------------------------------
@@ -492,15 +516,4 @@ Pre Requsites
                 Widget	        Yes	        Rare	        Yes	        Another domain
                 Shared	        Yes	        No	        Yes	        Another domain
 
-        Angular LifeCycle & Hooks
-       --------------------------------------------------------------------------------------
-
-        constructor
-        ngOnChanges                      when the data-bound property variations happen (form control gets renewed )
-        ngOnInit                         When Angular has completed the creation and introduction of components
-        ngDoCheck                        whenever there is a vitality to review the input property of a component or directive
-                ngAfterContentInit      when every content of the components gets introduced and checked for the first time
-                ngAfterContentChecked   
-                ngAfterViewInit
-                ngAfterViewChecked
-        ngOnDestroy
+      
