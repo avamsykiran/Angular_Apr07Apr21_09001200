@@ -1,0 +1,13 @@
+<div class="col-sm-8 mx-auto">
+    <div [class]="{'alert':true,'alert-info':!isError,'alert-danger':isError}">
+        <ng-content>            
+        </ng-content>
+    </div>
+</div>
+
+<!--
+        <app-msg-box [isError]="true">
+                klfjasdkljfasklfjlaksfjlak;sd
+        </app-msg-box>
+
+-->
