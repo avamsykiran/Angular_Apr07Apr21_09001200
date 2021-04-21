@@ -1,0 +1,16 @@
+<section class="p-4 m-1">
+    <app-msg-box [isError]="true" *ngIf="err">
+        {{err}}
+    </app-msg-box>
+
+    <div class="card card-primary col-sm-6 mx-auto border border-primary">
+        <div class="card-body p-3">
+            <form class="form-inline" (ngSubmit)="handleFormSubmit()">
+                <input type="email" placeholder="email" class="form-control mr-1" [(ngModel)]="email" required />
+                <input type="password" placeholder="password" class="form-control mr-1" [(ngModel)]="password"
+                    required />
+                <button class="btn btn-sm btn-primary">Sign In</button>
+            </form>
+        </div>
+    </div>
+</section>

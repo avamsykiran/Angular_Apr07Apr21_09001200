@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@hrm.com",
+      "password": "admin",
+      "role": "ADMIN"
+    },
+    {
+      "id": 2,
+      "email": "user@hrm.com",
+      "password": "user",
+      "role": "USER"
+    }
+  ],
+  "depts": [
+    {
+      "id": 1,
+      "title": "JavaDevelopment"
+    },
+    {
+      "id": 2,
+      "title": "DotNet Team"
+    },
+    {
+      "id": 3,
+      "title": "DevOpsTeam"
+    }
+  ],
+  "emps": [
+    {
+      "id": 102,
+      "name": "Suseels",
+      "hiredate": "2021-02-01T00:00:00.000Z",
+      "basic": 25000,
+      "deptId": 2
+    },
+    {
+      "id": 101,
+      "name": "Srinu",
+      "hiredate": "2021-03-01T00:00:00.000Z",
+      "basic": 25000,
+      "deptId": 3
+    },
+    {
+      "id": 103,
+      "name": "Vamsy",
+      "hiredate": "2021-03-01T00:00:00.000Z",
+      "basic": 25000,
+      "deptId": 1
+    },
+    {
+      "id": 105,
+      "name": "Indhikaa Valli",
+      "hiredate": "2021-02-01T00:00:00.000Z",
+      "deptId": 3,
+      "basic": 45678
+    }
+  ]
+}

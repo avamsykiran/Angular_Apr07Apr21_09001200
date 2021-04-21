@@ -1,0 +1,17 @@
+<section>
+    <h5><i class="fa fa-list"> Departments List</i></h5>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <th>Department#</th>
+                <th>Title</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of depts">
+                    <td>{{d.id}}</td>
+                    <td>{{d.title}}</td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
