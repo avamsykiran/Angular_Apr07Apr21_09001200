@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../hrm-services/auth.service';
 
 @Component({
   selector: 'app-emps',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmpsComponent implements OnInit {
 
-  constructor() { }
+  currentUserRole: string;
+
+  constructor(private authService: AuthService) {
+
+  }
 
   ngOnInit(): void {
+    this.currentUserRole = this.authService.getCurrentUserRole();
   }
+
 
 }

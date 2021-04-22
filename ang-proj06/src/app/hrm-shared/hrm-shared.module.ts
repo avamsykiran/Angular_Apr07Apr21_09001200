@@ -6,13 +6,22 @@ import { MsgBoxComponent } from './msg-box/msg-box.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DeptnamePipe } from './deptname.pipe';
 import { HrmServicesModule } from '../hrm-services/hrm-services.module';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [HeaderComponent, MsgBoxComponent, DashboardComponent, DeptnamePipe],
+  declarations: [
+    HeaderComponent, 
+    MsgBoxComponent, 
+    DashboardComponent, 
+    DeptnamePipe,
+    LoginComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
-    HrmServicesModule
+    HrmServicesModule,
+    FormsModule
   ],
   exports:[
     HeaderComponent,

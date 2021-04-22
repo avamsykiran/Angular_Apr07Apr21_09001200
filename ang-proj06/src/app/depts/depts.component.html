@@ -1,17 +1,20 @@
-<section class="row">
-    <div class="col-sm-3 border-1 shadow-sm m-3">
-        <app-dept-form (add)="doAdd($event)"></app-dept-form>
-    </div>
-    <div class="col-sm-7 border-1 shadow-sm m-3">
+<app-header [role]="currentUserRole"></app-header>
+<main class="container-fluid p-4">
+    <section class="row">
+        <div class="col-sm-3 border-1 shadow-sm m-3" *ngIf="currentUserRole==='ADMIN'">
+            <app-dept-form (add)="doAdd($event)"></app-dept-form>
+        </div>
+        <div class="col border-1 shadow-sm m-3">
 
-        <app-msg-box *ngIf="!depts && !err">
-            <strong>Please wait while loading data...!</strong>
-        </app-msg-box>
+            <app-msg-box *ngIf="!depts && !err">
+                <strong>Please wait while loading data...!</strong>
+            </app-msg-box>
 
-        <app-msg-box [isError]="true" *ngIf="err">
-            <strong>{{err}}</strong>
-        </app-msg-box>
+            <app-msg-box [isError]="true" *ngIf="err">
+                <strong>{{err}}</strong>
+            </app-msg-box>
 
-        <app-dept-list [depts]="depts" *ngIf="depts"></app-dept-list>
-    </div>
-</section>
+            <app-dept-list [depts]="depts" *ngIf="depts"></app-dept-list>
+        </div>
+    </section>
+</main>

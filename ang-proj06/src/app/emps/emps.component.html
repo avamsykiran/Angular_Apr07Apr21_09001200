@@ -1,5 +1,6 @@
-<section>
-    <nav class="mb-3">
+<app-header [role]="currentUserRole"></app-header>
+<main class="container-fluid p-4">
+    <nav class="mb-3"  *ngIf="currentUserRole==='ADMIN'">
         <a routerLink="list" class="btn btn-sm btn-primary mr-2">
             <i class="fa fa-list"></i> Employees
         </a>
@@ -8,4 +9,4 @@
         </a>
     </nav>
    <router-outlet></router-outlet>
-</section>
+</main>

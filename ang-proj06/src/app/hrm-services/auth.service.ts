@@ -40,22 +40,29 @@ export class AuthService {
   }
 
   isLoggedIn():boolean{
-    return sessionStorage.getItem("user")!=null;
+    let user = sessionStorage.getItem("user");
+    return user!=undefined && user!=null;
   }
 
   getCurrentUserEmail():string{
+    let email=null;
     if(!this.isLoggedIn()){
       throw "No Loggind User!";
+    }else{
+      email = JSON.parse(sessionStorage.getItem("user")).email;
     }
 
-    return JSON.parse(sessionStorage.getItem("user")).email;
+    return email;
   }
 
   getCurrentUserRole():string{
+    let role=null;
     if(!this.isLoggedIn()){
       throw "No Loggind User!";
+    }else{
+      role = JSON.parse(sessionStorage.getItem("user")).role;
     }
 
-    return JSON.parse(sessionStorage.getItem("user")).role;
+    return role;
   }
 }

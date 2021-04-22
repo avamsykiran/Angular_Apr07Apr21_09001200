@@ -1,3 +1,12 @@
-<section class="jumbotron">
-    <h1>Human Resource Management Portal</h1>
-</section>
+<app-header [role]="currentUserRole"></app-header>
+<main class="container-fluid p-4">
+    <section class="jumbotron">
+        <h1>Human Resource Management Portal</h1>
+    </section>
+
+    <h3 *ngIf="currentUserEmail">
+        Welcome! {{currentUserEmail}}
+    </h3>
+
+    <app-login *ngIf="!currentUserEmail" (loginSuccess)="handleLogin()"></app-login>
+</main>

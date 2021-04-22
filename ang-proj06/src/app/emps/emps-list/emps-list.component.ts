@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/hrm-services/auth.service';
 import { EmpsService } from 'src/app/hrm-services/emps.service';
 import { Emp } from 'src/app/model/emp';
 
@@ -11,12 +12,14 @@ export class EmpsListComponent implements OnInit {
 
   emps: Emp[];
   err: string;
+  currentUserRole:string;
 
-  constructor(private empService: EmpsService) {
+  constructor(private empService: EmpsService,private authService:AuthService) {
   }
 
   ngOnInit() {
     this.loadData();
+    this.currentUserRole=this.authService.getCurrentUserRole();
   }
 
   loadData() {

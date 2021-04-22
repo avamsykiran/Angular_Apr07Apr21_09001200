@@ -22,7 +22,7 @@
             <th>Hire Date</th>
             <th>Basic Pay</th>
             <th>Department</th>
-            <th></th>
+            <th  *ngIf="currentUserRole==='ADMIN'"></th>
         </thead>
         <tbody>
             <tr *ngFor="let e of emps">
@@ -31,12 +31,12 @@
                 <td>{{e.hiredate|date:'dd-MMM-yyyy'}}</td>
                 <td>{{e.basic|currency:'INR'}}</td>
                 <td>{{e.deptId}} - {{e.deptId|deptname|async}}</td>
-                <td>
+                <td  *ngIf="currentUserRole==='ADMIN'">
                     <a [routerLink]="['/emps/edit/',e.id]" class="btn btn-sm  mr-3">
                         <i class="fa fa-pencil"> EDIT</i>
                     </a>
                     <button class="btn btn-sm " (click)="delete(e.id)">
-                        <i class="fa fa-trash"> DELTE</i>
+                        <i class="fa fa-trash"> DELETE</i>
                     </button>
                 </td>
             </tr>
