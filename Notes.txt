@@ -731,15 +731,46 @@ Pre Requsites
             This option means guards and resolvers will ignore changes when a provided predicate function returns `false`. This supports use cases where an application needs to ignore some param updates but not others. For example, changing a sort param in the URL might need to be ignored, whereas changing the `project` param might require a re-run of guards and resolvers.
         Added functionality to mark a control and its descendant controls as touched: — add markAllAsTouched () to AbstractControl
 
+     Angular 9
+        IVY Presented as the Default Compiler
+        More Consistent ng-update
+        API Extractor Updates
+        Fresh and new alternatives for ‘providedIn’
+        IDE and Language Service Enhancements
+        Typescript 3.7 Updates
+        Component Harness
+        Angular Core Type-Safe Alterations
+
+     Angular 10
+        Language Service
+        Compiler Update
+        New Default Browser Configuration
+        Optional Stricter Settings
+        Ngcc
+        Performance Improvements
+        Typescript 3.9, TSLib 2.9 & TSLint v6
+        Localization
+        Converting pre-Ivy code
+
+      Angular 11
+        Updated Hot Module Replacement (HMR) Support
+        Updates on Operation Byelog
+        Automatic Inlining of Fonts
+        Component Test Harnesses
+        Updated Language Service Preview
+        Faster Builds
+        Experimental Webpack 5 Support
+        Moving to ESLint
+        
 Token Based authentication
 ----------------------------------------
 
 1. request for an access
-    Audence request for an access to th Theater
+    Audence request for an access to the Theater
     the theter demands some money
 
     UI request for an access to a BackEndServer
-    the BackEndServer demands som identity (pubKey+privKey)
+    the BackEndServer demands some identity (pubKey+privKey)
 
 2. Once the demand is met, we need a proof of authentication...
 
@@ -790,8 +821,8 @@ Jasmine is a javascript testing library
 ============================================================
     describe        create a test suite.
     it              create a test case.
-    before          setup method
-    after           teardown method
+    beforeEach      setup method
+    afterEach       teardown method
 
     describe("test naem ad description",()=>{
         //all test cases will go
@@ -830,3 +861,11 @@ Jasmine is a javascript testing library
                 ...etc
             
             expect(2*2).toBe(4);
+
+Karma
+----------------------------------
+        is an angular testing platform which supports or supplies
+        resource to jasmin for testing.
+
+        Karma will runt he tet cases as and when the code gets modified
+        and alkso generates the test reports on chrome...!

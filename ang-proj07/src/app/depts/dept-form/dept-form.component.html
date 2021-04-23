@@ -1,0 +1,27 @@
+<section>
+    <h5><i class="fa fa-file"> New Departments</i></h5>
+
+    <form (ngSubmit)="saveDept()" #f="ngForm">
+        <div class="form-group">
+            <label>Department Id</label>
+            <input type="number" name="did" class="form-control"
+            [(ngModel)]="dept.id" #did="ngModel" required/>
+            <div class="alert alert-danger" *ngIf="did.invalid && (did.touched || did.dirty)">
+                <p *ngIf="did.errors.required">This field is mandate</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Department Title</label>
+            <input type="text" name="dtt" class="form-control" 
+            [(ngModel)]="dept.title" #dt="ngModel" required minlength="5" maxlength="25"/>
+            <div class="alert alert-danger" *ngIf="dt.invalid && (dt.touched || dt.dirty)">
+                <p *ngIf="dt.errors.required">This field is mandate</p>
+                <p *ngIf="dt.errors.minlength">Atleast 5 characters expected.</p>
+                <p *ngIf="dt.errors.maxlength">Atmax 25 characters expecrted.</p>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-block" [disabled]="f.invalid">
+            <i class="fa fa-save"> Save</i>
+        </button>
+    </form>
+</section>

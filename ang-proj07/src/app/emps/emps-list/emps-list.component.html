@@ -1,0 +1,45 @@
+<section>
+    <h3>
+        <i class="fa fa-list"> Employees List</i>
+    </h3>
+
+    <app-msg-box *ngIf="!emps && !err">
+        <strong>Please wait while loading data...!</strong>
+    </app-msg-box>
+
+    <app-msg-box [isError]="true" *ngIf="err">
+        <strong>{{err}}</strong>
+    </app-msg-box>
+
+    <app-msg-box *ngIf="emps && (emps.length==0)">
+        <strong>No Records To Display.</strong>
+    </app-msg-box>
+
+    <table class="table table-stripped table-bordered"  *ngIf="emps && (emps.length>0)">
+        <thead>
+            <th>Employee#</th>
+            <th>Name</th>
+            <th>Hire Date</th>
+            <th>Basic Pay</th>
+            <th>Department</th>
+            <th  *ngIf="currentUserRole==='ADMIN'"></th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of emps">
+                <td>{{e.id}}</td>
+                <td>{{e.name|uppercase}}</td>
+                <td>{{e.hiredate|date:'dd-MMM-yyyy'}}</td>
+                <td>{{e.basic|currency:'INR'}}</td>
+                <td>{{e.deptId}} - {{e.deptId|deptname|async}}</td>
+                <td  *ngIf="currentUserRole==='ADMIN'">
+                    <a [routerLink]="['/emps/edit/',e.id]" class="btn btn-sm  mr-3">
+                        <i class="fa fa-pencil"> EDIT</i>
+                    </a>
+                    <button class="btn btn-sm " (click)="delete(e.id)">
+                        <i class="fa fa-trash"> DELETE</i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
